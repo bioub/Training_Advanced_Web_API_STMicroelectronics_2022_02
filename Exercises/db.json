@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "JavaScript",
+    "src": "javascript-logo.svg",
+    "likes": 10
+  },
+  {
+    "id": 2,
+    "title": "Node.js",
+    "src": "node-logo.svg",
+    "likes": 5
+  }
+]
