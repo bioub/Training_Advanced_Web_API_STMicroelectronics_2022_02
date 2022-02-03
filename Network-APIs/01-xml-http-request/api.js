@@ -4,7 +4,7 @@ export function fetchUserById(id) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
 
-    xhr.open('GET', 'https://jsonplaceholder.typicode.com/users/' + id);
+    xhr.open('GET', 'http://localhost:9000/users/' + id);
   
     // xhr.onload = function() { }
     xhr.addEventListener('load', () => {
