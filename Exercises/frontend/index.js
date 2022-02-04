@@ -59,3 +59,14 @@ document.body.addEventListener('click', (event) => {
     }
   }
 });
+
+
+
+window.addEventListener('load', async () => {
+  try {
+    const reg = await navigator.serviceWorker.register('sw.js');
+    console.log('Registration of sw.js succeeded');
+  } catch (err) {
+    console.log('Registration of sw.js failed');
+  }
+});
