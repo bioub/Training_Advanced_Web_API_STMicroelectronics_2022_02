@@ -55,16 +55,24 @@ export class MyCard extends HTMLElement {
     this.#imgEl = document.createElement('img');
     this.#h2El = document.createElement('h2');
     this.#spanEl = document.createElement('span');
-    
+
     this.shadowRoot.append(styleEl, this.#imgEl, this.#h2El, this.#spanEl);
   }
-  attributeChangedCallback() {
-    this.#render();
-  }
-  #render() {
-    this.#imgEl.src = this.src;
-    this.#h2El.innerText = this.title;
-    this.#spanEl.innerText = this.likes + ' likes';
+  attributeChangedCallback(name) {
+    switch (name) {
+      case 'src':
+        this.#imgEl.src = this.src;
+        break;
+      case 'card-title':
+        this.#h2El.innerText = this.title;
+        break;
+      case 'likes':
+        this.#spanEl.innerText = this.likes + ' likes';
+        break;
+    }
+
+
+
   }
 }
 
