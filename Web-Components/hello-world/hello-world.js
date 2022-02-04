@@ -31,6 +31,12 @@ class HelloWorld extends HTMLElement {
   set name(val) {
     this.setAttribute('name', val);
   }
+  get age() {
+    return Number(this.getAttribute('age'));
+  }
+  set name(val) {
+    this.setAttribute('name', String(val));
+  }
   constructor() {
     super();
     this.shadow = this.attachShadow({ mode: 'open' });

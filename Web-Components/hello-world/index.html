@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,16 +11,29 @@
     :root {
       --hello-bg-hover-color: green;
     }
+
     hello-world[name="Romain"] {
       --hello-bg-hover-color: blue;
     }
   </style>
+  
 </head>
+
 <body>
   <hello-world style="--hello-bg-hover-color: pink"></hello-world>
- <div>
-  <hello-world name="Romain"></hello-world>
- </div>
- <hello-world name="Toto"></hello-world>
+  <div>
+    <hello-world name="Romain"></hello-world>
+  </div>
+  <hello-world name="Toto"></hello-world>
+
+  <script>
+    customElements.whenDefined('hello-world').then(() => {
+      const helloWorldEl = document.createElement('hello-world');
+      // helloWorldEl.names = ['Toto', 'Titi'];
+      helloWorldEl.name = 'Titi';
+      document.body.append(helloWorldEl);
+    });
+  </script>
 </body>
+
 </html>
